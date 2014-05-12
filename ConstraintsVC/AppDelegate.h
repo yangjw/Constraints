@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^CompletionHandler)(UIBackgroundFetchResult);
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
++ (instancetype)sharedDelegate;
 
+
+@property (copy, nonatomic) CompletionHandler completionHandler;
 @end
