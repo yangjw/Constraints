@@ -10,6 +10,7 @@
 #import "NextVC.h"
 #import "MOTapLabel.h"
 #import "ClickLabel.h"
+#import "MMTextAttachment.h"
 
 #if __LP64__
 #define D "ld"
@@ -33,6 +34,8 @@ typedef int (^Block3)(int);
 	BOOL go;
 	BOOL back;
 }
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) UITextView *text;
 @property (strong, nonatomic) IBOutlet UIButton *testbutotn;
 @property (strong, nonatomic) IBOutlet UIImageView *imageVeiw;
 
@@ -89,8 +92,24 @@ typedef int (^Block3)(int);
 	
 	
 	
+	NSMutableAttributedString *mutableAttributedstring = [[NSMutableAttributedString alloc] initWithString:@"我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好阿我的谁阿你好" attributes:nil];
+	MMTextAttachment *textAttacthmen = [[MMTextAttachment alloc] initWithData:nil ofType:nil];
+	UIImage *image = [UIImage imageNamed:@"ttescon.png"];
+	textAttacthmen.image = image;
+	
+	NSAttributedString *textAttibutedString = [NSAttributedString attributedStringWithAttachment:textAttacthmen];
+	[mutableAttributedstring insertAttributedString:textAttibutedString atIndex:30];
+	_textView.attributedText  = mutableAttributedstring;
+	
+	
+	self.text = ({
+		UITextView *txt = [[UITextView alloc] init];
+		txt;
+	});
+	
+	
 	_testbutotn = ({
-		[_testbutotn addTarget:self action:@selector(pupu_show) forControlEvents:UIControlEventTouchDragInside];
+		[_testbutotn addTarget:self action:@selector(pupu_show) forControlEvents:UIControlEventTouchUpInside];
 		_testbutotn;
 	});
 	
@@ -107,14 +126,14 @@ typedef int (^Block3)(int);
 //	[self.view addSubview:btn];
 //	[self.view addSubview:pupu_img];
 	
-	CABasicAnimation *hover = [CABasicAnimation animationWithKeyPath:@"position"];
-	hover.additive = YES; // fromValue and toValue will be relative instead of absolute values
-	hover.fromValue = [NSValue valueWithCGPoint:CGPointZero];
-	hover.toValue = [NSValue valueWithCGPoint:CGPointMake(0.0, -10.0)]; // y increases downwards on iOS
-	hover.autoreverses = YES; // Animate back to normal afterwards
-	hover.duration = 0.5; // The duration for one part of the animation (0.2 up and 0.2 down)
-	hover.repeatCount = INFINITY; // The number of times the animation should repeat
-	[_imageVeiw.layer addAnimation:hover forKey:@"myHoverAnimation"];
+//	CABasicAnimation *hover = [CABasicAnimation animationWithKeyPath:@"position"];
+//	hover.additive = YES; // fromValue and toValue will be relative instead of absolute values
+//	hover.fromValue = [NSValue valueWithCGPoint:CGPointZero];
+//	hover.toValue = [NSValue valueWithCGPoint:CGPointMake(0.0, -10.0)]; // y increases downwards on iOS
+//	hover.autoreverses = YES; // Animate back to normal afterwards
+//	hover.duration = 0.5; // The duration for one part of the animation (0.2 up and 0.2 down)
+//	hover.repeatCount = INFINITY; // The number of times the animation should repeat
+//	[_imageVeiw.layer addAnimation:hover forKey:@"myHoverAnimation"];
 	
 	
 	NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -239,7 +258,7 @@ typedef int (^Block3)(int);
 	
 	
 	NSLog(@"****************%@",self.setvalue(@"name"));
-	NSInteger test = 5000000000;
+	NSInteger test = 500000;
 	NSString *testString = [NSString stringWithFormat:@"%ld",(long)test];
 	NSLog(@"%@",testString);
 	NSLog(@"Number is %ld", (long)test);
@@ -260,7 +279,7 @@ typedef int (^Block3)(int);
 
 
 -(void)pupu_show{
-	UIImageView *views = (UIImageView*)[self.view  viewWithTag:10000];
+	UIImageView *views = (UIImageView*)_imageVeiw;
 	CGPoint p = views.center;
 	if (p.x<320-views.frame.size.width/2 && p.x>views.frame.size.width/2) {             //图片左右运动区域
 		if (back) {

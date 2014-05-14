@@ -20,6 +20,9 @@
 		933DC3701907C4C500D9FF1B /* MOTapLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 933DC36F1907C4C500D9FF1B /* MOTapLabel.m */; };
 		933F6D001918E51600C10E5B /* ClickLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 933F6CFF1918E51600C10E5B /* ClickLabel.m */; };
 		933F6D021918E52F00C10E5B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933F6D011918E52F00C10E5B /* CoreText.framework */; };
+		933FA3E61921F8F800D8C62B /* MMTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 933FA3E51921F8F800D8C62B /* MMTextAttachment.m */; };
+		9340871D1923183A00BCF578 /* QuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9340871C1923183A00BCF578 /* QuestionVC.m */; };
+		934087201923510A00BCF578 /* NewQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9340871F1923510A00BCF578 /* NewQuestionVC.m */; };
 		9341900118EE44AB00AB707F /* UDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9341900018EE44AB00AB707F /* UDID.m */; };
 		9341900318EE44B800AB707F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9341900218EE44B800AB707F /* Security.framework */; };
 		93448B6F18E2A50200A12C1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93448B6E18E2A50200A12C1A /* Foundation.framework */; };
@@ -84,6 +87,12 @@
 		933F6CFE1918E51600C10E5B /* ClickLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickLabel.h; sourceTree = "<group>"; };
 		933F6CFF1918E51600C10E5B /* ClickLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickLabel.m; sourceTree = "<group>"; };
 		933F6D011918E52F00C10E5B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		933FA3E41921F8F800D8C62B /* MMTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTextAttachment.h; sourceTree = "<group>"; };
+		933FA3E51921F8F800D8C62B /* MMTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTextAttachment.m; sourceTree = "<group>"; };
+		9340871B1923183A00BCF578 /* QuestionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionVC.h; sourceTree = "<group>"; };
+		9340871C1923183A00BCF578 /* QuestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionVC.m; sourceTree = "<group>"; };
+		9340871E1923510A00BCF578 /* NewQuestionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewQuestionVC.h; sourceTree = "<group>"; };
+		9340871F1923510A00BCF578 /* NewQuestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewQuestionVC.m; sourceTree = "<group>"; };
 		93418FFF18EE44AB00AB707F /* UDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDID.h; sourceTree = "<group>"; };
 		9341900018EE44AB00AB707F /* UDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDID.m; sourceTree = "<group>"; };
 		9341900218EE44B800AB707F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -152,9 +161,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		933FA3E31921F8CE00D8C62B /* TextKit */ = {
+			isa = PBXGroup;
+			children = (
+				933FA3E41921F8F800D8C62B /* MMTextAttachment.h */,
+				933FA3E51921F8F800D8C62B /* MMTextAttachment.m */,
+			);
+			name = TextKit;
+			sourceTree = "<group>";
+		};
+		9340871A1923181000BCF578 /* QuestionVC */ = {
+			isa = PBXGroup;
+			children = (
+				9340871B1923183A00BCF578 /* QuestionVC.h */,
+				9340871C1923183A00BCF578 /* QuestionVC.m */,
+				9340871E1923510A00BCF578 /* NewQuestionVC.h */,
+				9340871F1923510A00BCF578 /* NewQuestionVC.m */,
+			);
+			name = QuestionVC;
+			sourceTree = "<group>";
+		};
 		93448B6218E2A50200A12C1A = {
 			isa = PBXGroup;
 			children = (
+				93448B8318E2A50300A12C1A /* Main_iPad.storyboard */,
+				93448B8018E2A50300A12C1A /* Main_iPhone.storyboard */,
+				9340871A1923181000BCF578 /* QuestionVC */,
+				933FA3E31921F8CE00D8C62B /* TextKit */,
 				937F68B21906000800E2C6E7 /* Test */,
 				937F68AD1905FFD400E2C6E7 /* tabbar */,
 				93448B7418E2A50200A12C1A /* ConstraintsVC */,
@@ -197,8 +230,6 @@
 				931324A218E54C9F0027D325 /* CEReversibleAnimationController.m */,
 				93448B7D18E2A50200A12C1A /* AppDelegate.h */,
 				93448B7E18E2A50200A12C1A /* AppDelegate.m */,
-				93448B8018E2A50300A12C1A /* Main_iPhone.storyboard */,
-				93448B8318E2A50300A12C1A /* Main_iPad.storyboard */,
 				93448B8618E2A50300A12C1A /* ViewController.h */,
 				93448B8718E2A50300A12C1A /* ViewController.m */,
 				9345D7631919D309006944E5 /* ttescon.png */,
@@ -395,6 +426,7 @@
 			files = (
 				931324A918E56CD40027D325 /* iPadViewController.m in Sources */,
 				93448B8818E2A50300A12C1A /* ViewController.m in Sources */,
+				933FA3E61921F8F800D8C62B /* MMTextAttachment.m in Sources */,
 				9349876518E9072300BE22B2 /* MyClass.m in Sources */,
 				937F68B71906058200E2C6E7 /* TabOneVC.m in Sources */,
 				93180E3D18F3CA2000312F31 /* TwoViewController.m in Sources */,
@@ -404,6 +436,7 @@
 				931324A618E54C9F0027D325 /* CEReversibleAnimationController.m in Sources */,
 				93180E4018F3CA2900312F31 /* ThreeViewController.m in Sources */,
 				93448B7F18E2A50200A12C1A /* AppDelegate.m in Sources */,
+				934087201923510A00BCF578 /* NewQuestionVC.m in Sources */,
 				933DC3701907C4C500D9FF1B /* MOTapLabel.m in Sources */,
 				93448B7B18E2A50200A12C1A /* main.m in Sources */,
 				933F6D001918E51600C10E5B /* ClickLabel.m in Sources */,
@@ -412,6 +445,7 @@
 				93180E3A18F3CA1700312F31 /* FirstViewController.m in Sources */,
 				93348EC21904AC8A001A8DF3 /* NSString+extended.m in Sources */,
 				93180E4318F3CE5300312F31 /* ConViewController.m in Sources */,
+				9340871D1923183A00BCF578 /* QuestionVC.m in Sources */,
 				931324A418E54C9F0027D325 /* NavigationController.m in Sources */,
 				93B7B0F918E3FEEB00E6D7D3 /* NextVC.m in Sources */,
 				934A598018E4FE1900E699CF /* CustomPush.m in Sources */,
@@ -453,6 +487,7 @@
 				93448B8118E2A50300A12C1A /* Base */,
 			);
 			name = Main_iPhone.storyboard;
+			path = ConstraintsVC;
 			sourceTree = "<group>";
 		};
 		93448B8318E2A50300A12C1A /* Main_iPad.storyboard */ = {
@@ -461,6 +496,7 @@
 				93448B8418E2A50300A12C1A /* Base */,
 			);
 			name = Main_iPad.storyboard;
+			path = ConstraintsVC;
 			sourceTree = "<group>";
 		};
 		93448B9918E2A50300A12C1A /* InfoPlist.strings */ = {
