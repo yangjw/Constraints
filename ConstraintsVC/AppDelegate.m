@@ -12,6 +12,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	
+	notifiDic = [[NSMutableDictionary alloc] init];
+    
+    [self initNotification];
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
+    
+    NSLog(@"launchOption==%@",[launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]);
+    if ([launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey] != nil) {
+        
+        if (notifiDic.count != 0) {
+            [notifiDic removeAllObjects];
+        }
+        [notifiDic setDictionary:(NSDictionary *)[launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"didFinishLaunching" message:[NSString stringWithFormat:@"didFinishLaunching：\n%@",launchOptions] delegate:self cancelButtonTitle:@"Cancek" otherButtonTitles:@"OK", nil];
+        [alert show];
+        alert.tag = 101;
+
+    }
+	
+	
     // Override point for customization after application launch.
 	
 	/*
@@ -28,6 +51,11 @@
 //	}
 //	
     return YES;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	
 }
 
 //- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
@@ -70,6 +98,46 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+
+- (void)initNotification{
+    [[UIApplication sharedApplication]registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert |UIRemoteNotificationTypeBadge |UIRemoteNotificationTypeSound)];
+}
+#pragma mark -
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    NSLog(@"deviceToken: %@", deviceToken);
+    NSLog(@"deviceToken===%@",[deviceToken description]);
+    
+    NSRange _range = NSMakeRange(1,[[deviceToken description] length]-2);
+    NSString *deviceTokenStr = [[deviceToken description] substringWithRange:_range];
+    NSLog(@"deviceTokenStr==%@",deviceTokenStr);
+    deviceTokenStr = [deviceTokenStr stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"deviceTokenStr==%@",deviceTokenStr);
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"product deviceToken" message:deviceTokenStr delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alertView show];
+    
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
+    NSLog(@"%s,,,,%@",__func__,userInfo);
+
+    if (notifiDic.count != 0) {
+        [notifiDic removeAllObjects];
+    }
+    [notifiDic setDictionary:userInfo];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"受到的通知如下：\n%@",userInfo] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    [alert show];
+    alert.tag = 100;
+    
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    NSLog(@"%s",__func__);
 }
 
 @end

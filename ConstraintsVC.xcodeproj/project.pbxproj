@@ -41,6 +41,8 @@
 		93448B9B18E2A50300A12C1A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93448B9918E2A50300A12C1A /* InfoPlist.strings */; };
 		93448B9D18E2A50300A12C1A /* ConstraintsVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93448B9C18E2A50300A12C1A /* ConstraintsVCTests.m */; };
 		9345D7641919D309006944E5 /* ttescon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9345D7631919D309006944E5 /* ttescon.png */; };
+		9347437A1924B52B008A46C0 /* Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 934743791924B52B008A46C0 /* Draw.m */; };
+		9347437C1924B575008A46C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9347437B1924B575008A46C0 /* QuartzCore.framework */; };
 		9349876518E9072300BE22B2 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9349876418E9072300BE22B2 /* MyClass.m */; };
 		9349876818E907C500BE22B2 /* ObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9349876718E907C500BE22B2 /* ObjectViewController.m */; };
 		934A598018E4FE1900E699CF /* CustomPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 934A597F18E4FE1900E699CF /* CustomPush.m */; };
@@ -68,8 +70,8 @@
 		931324A118E54C9F0027D325 /* CEPortalAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPortalAnimationController.h; sourceTree = "<group>"; };
 		931324A218E54C9F0027D325 /* CEReversibleAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEReversibleAnimationController.m; sourceTree = "<group>"; };
 		931324A318E54C9F0027D325 /* CEReversibleAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEReversibleAnimationController.h; sourceTree = "<group>"; };
-		931324A718E56CD40027D325 /* iPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadViewController.h; sourceTree = "<group>"; };
-		931324A818E56CD40027D325 /* iPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadViewController.m; sourceTree = "<group>"; };
+		931324A718E56CD40027D325 /* iPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iPadViewController.h; path = ConstraintsVC/iPadViewController.h; sourceTree = "<group>"; };
+		931324A818E56CD40027D325 /* iPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iPadViewController.m; path = ConstraintsVC/iPadViewController.m; sourceTree = "<group>"; };
 		93180E3518F3CA0C00312F31 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		93180E3618F3CA0C00312F31 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		93180E3818F3CA1700312F31 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
@@ -117,6 +119,9 @@
 		93448B9A18E2A50300A12C1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		93448B9C18E2A50300A12C1A /* ConstraintsVCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConstraintsVCTests.m; sourceTree = "<group>"; };
 		9345D7631919D309006944E5 /* ttescon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ttescon.png; sourceTree = "<group>"; };
+		934743781924B52B008A46C0 /* Draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draw.h; sourceTree = "<group>"; };
+		934743791924B52B008A46C0 /* Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draw.m; sourceTree = "<group>"; };
+		9347437B1924B575008A46C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9349876318E9072300BE22B2 /* MyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClass.h; sourceTree = "<group>"; };
 		9349876418E9072300BE22B2 /* MyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClass.m; sourceTree = "<group>"; };
 		9349876618E907C500BE22B2 /* ObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectViewController.h; sourceTree = "<group>"; };
@@ -140,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9347437C1924B575008A46C0 /* QuartzCore.framework in Frameworks */,
 				933F6D021918E52F00C10E5B /* CoreText.framework in Frameworks */,
 				9341900318EE44B800AB707F /* Security.framework in Frameworks */,
 				93448B7118E2A50200A12C1A /* CoreGraphics.framework in Frameworks */,
@@ -184,8 +190,8 @@
 		93448B6218E2A50200A12C1A = {
 			isa = PBXGroup;
 			children = (
-				93448B8318E2A50300A12C1A /* Main_iPad.storyboard */,
 				93448B8018E2A50300A12C1A /* Main_iPhone.storyboard */,
+				9347436319245550008A46C0 /* iPad */,
 				9340871A1923181000BCF578 /* QuestionVC */,
 				933FA3E31921F8CE00D8C62B /* TextKit */,
 				937F68B21906000800E2C6E7 /* Test */,
@@ -209,6 +215,7 @@
 		93448B6D18E2A50200A12C1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9347437B1924B575008A46C0 /* QuartzCore.framework */,
 				933F6D011918E52F00C10E5B /* CoreText.framework */,
 				9341900218EE44B800AB707F /* Security.framework */,
 				93448B6E18E2A50200A12C1A /* Foundation.framework */,
@@ -239,8 +246,6 @@
 				93B7B0F818E3FEEB00E6D7D3 /* NextVC.m */,
 				934A597E18E4FE1900E699CF /* CustomPush.h */,
 				934A597F18E4FE1900E699CF /* CustomPush.m */,
-				931324A718E56CD40027D325 /* iPadViewController.h */,
-				931324A818E56CD40027D325 /* iPadViewController.m */,
 			);
 			path = ConstraintsVC;
 			sourceTree = "<group>";
@@ -272,6 +277,18 @@
 				93448B9918E2A50300A12C1A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9347436319245550008A46C0 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				931324A718E56CD40027D325 /* iPadViewController.h */,
+				931324A818E56CD40027D325 /* iPadViewController.m */,
+				93448B8318E2A50300A12C1A /* Main_iPad.storyboard */,
+				934743781924B52B008A46C0 /* Draw.h */,
+				934743791924B52B008A46C0 /* Draw.m */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		937F68AD1905FFD400E2C6E7 /* tabbar */ = {
@@ -451,6 +468,7 @@
 				934A598018E4FE1900E699CF /* CustomPush.m in Sources */,
 				937F68B01905FFF700E2C6E7 /* TabBarMainVC.m in Sources */,
 				931324A518E54C9F0027D325 /* CEPortalAnimationController.m in Sources */,
+				9347437A1924B52B008A46C0 /* Draw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

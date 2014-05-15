@@ -10,10 +10,15 @@
 typedef void (^CompletionHandler)(UIBackgroundFetchResult);
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate>
+{
+	NSMutableDictionary *notifiDic;
+}
+
+
 
 @property (strong, nonatomic) UIWindow *window;
-+ (instancetype)sharedDelegate;
+//+ (instancetype)sharedDelegate;
 
 
 @property (copy, nonatomic) CompletionHandler completionHandler;
