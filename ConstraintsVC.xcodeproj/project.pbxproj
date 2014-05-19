@@ -167,6 +167,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93215B201929A3D800544B26 /* iphone */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iphone;
+			sourceTree = "<group>";
+		};
 		933FA3E31921F8CE00D8C62B /* TextKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +236,7 @@
 		93448B7418E2A50200A12C1A /* ConstraintsVC */ = {
 			isa = PBXGroup;
 			children = (
+				93215B201929A3D800544B26 /* iphone */,
 				9313249F18E54C9F0027D325 /* NavigationController.h */,
 				9313249E18E54C9F0027D325 /* NavigationController.m */,
 				931324A118E54C9F0027D325 /* CEPortalAnimationController.h */,
@@ -605,6 +613,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConstraintsVC/ConstraintsVC-Prefix.pch";
 				INFOPLIST_FILE = "ConstraintsVC/ConstraintsVC-Info.plist";
@@ -619,6 +628,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConstraintsVC/ConstraintsVC-Prefix.pch";
 				INFOPLIST_FILE = "ConstraintsVC/ConstraintsVC-Info.plist";

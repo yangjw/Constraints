@@ -34,6 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+
+	
+	
 	NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(downloadImage:) object:kUrl];
 	NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 	[queue addOperation:operation];
